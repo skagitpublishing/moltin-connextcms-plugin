@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Plugin Example</h2>
+    <p>
+      This is an example plugin for ConnextCMS and KeystoneJS. This screen is an example of a Backbone View.
+      The left menu is also a separate Backbone View. This plugin appended the menu item to the Left Menu View
+      so that you could navigate to this View screen.
+    </p>
+    <p>
+      <a href="https://github.com/skagitpublishing/plugin-template-connextcms" target="_blank">
+        View the GitHub repository for this plugin.
+      </a>
+    </p>
+    <p>
+      The user interface below is an example of manipulating database data through ConnextCMS. You can type
+      any string into the bottom input text box and click the Add button to add the string to the database
+      model. You can also update or delete any existing string in the database by clicking on the respective
+      buttons.
+    </p>
+  </div>
+</div>
+
+<form class="form-horizontal">
+  <div class="form-group" id="pluginScaffold">
+    <label for="strInput" class="col-sm-2 control-label">Add String</label>
+    <div class="col-sm-8">
+      <input type="email" class="form-control strInput" placeholder="Enter a string">
+    </div>
+    <div class="col-sm-1">
+      <button type="button" class="btn btn-small btn-success addBtn">Add</button>
+    </div>
+    <div class="col-sm-1">
+      <button type="button" class="btn btn-small btn-danger delBtn">Delete</button>
+    </div>
+  </div>
+</form>
