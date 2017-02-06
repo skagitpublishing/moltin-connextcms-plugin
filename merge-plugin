@@ -15,3 +15,9 @@ cp keystone/routes/views/*.js ../myCMS/routes/views/
 
 echo Copying Keystone Views
 cp keystone/templates/views/*.hbs ../myCMS/templates/views/
+
+#customized keystone.js file
+cp keystone/keystone.js ../myCMS/
+
+echo Copying public files
+cp public/js/*.js ../myCMS/public/js/

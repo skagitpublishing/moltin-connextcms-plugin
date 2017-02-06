@@ -1,0 +1,88 @@
+<style>
+  /* Using Handlebars template language, you can insert HTML and styling */
+  .features .glyphicon {
+    font-size: 32px;
+  }
+
+  .row {
+    margin-bottom: 20px;
+  }
+
+  .quote {
+    background-color: #444;
+    color: #e1e1e1;
+  }
+  .quote blockquote {
+    border: none;
+    margin: 0;
+  }
+  .quote footer {
+    color: #c1c1c1;
+  }
+  section, header {
+    background-color: #fff;
+  }
+  body {
+
+  }
+  .footer {
+    padding: 20px 0;
+  }
+
+
+  #demo-nav {
+    display: none;
+  }
+
+  .show-nav #demo-nav {
+    display: block;
+  }
+</style>
+
+<section>
+  <div class='container'>
+    <div class='row well well-lg'>
+      <div class='col-md-6'>
+        <h2>Moltin Test Demo</h2>
+        <p class='lead'>ConnextCMS communicates with <a href="http://keystonejs.com/" target="_blank">KeystoneJS</a> via API calls, allowing developers to use front end tools to build their websites.</p><br>
+        <p>Log in and try out the back end with the same demo login/pass as in Keystone:</p><br>
+        <p>Login: <b>user@keystonejs.com</b></p>
+        <p>Pass: <b>admin</b></p>
+        <a class='btn btn-lg btn-primary' href="/dashboard">Log into the Back End</a>
+        <a class='btn btn-lg btn-default' href="https://github.com/skagitpublishing/ConnextCMS" target="_blank">View GitHub Project</a>
+        
+      </div>
+      <div class='col-md-6 visible-md visible-lg'>
+        <img class="img-responsive center-block" src='images/skagit-connext-logo-gold.png' alt='ConnextCMS' />
+      </div>
+    </div>
+
+    <div class='row text-center features'>
+      <div class="col-offset-4 col-md-4" id="productDiv"></div>
+    </div>
+    
+  </div>
+</section>
+
+<script src="/js/moltin-v1.0.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var moltin = new Moltin({publicId: 'Wl5jWlS9vyDIO6HBLpe7nsEt4HUTfCh2o9HsrIbnhN'});
+
+    moltin.Authenticate(function() {
+      //debugger;
+      
+      moltin.Product.List(null, function(product) {
+        debugger;
+        
+        $('#productDiv').append('<img src="'+product[0].images[0].url.http+'" class="img-responsive center-block" />');
+        $('#productDiv').append('<h3>'+product[0].description+'</h3>');
+        $('#productDiv').append('<p>$'+product[0].sale_price+'</p>');
+        
+      }, function(error) {
+        console.log('something went wrong...');
+      });
+      
+    });
+  });
+</script>
