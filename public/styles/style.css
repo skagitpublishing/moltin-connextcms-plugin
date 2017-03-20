@@ -282,7 +282,7 @@ i.inst:hover{
 /*--banner--*/
 /*-- agileits --*/
 .banner{
-	background: url(../images/1.jpg) no-repeat ;
+	background: url(../images/homepage-header-image.jpg) no-repeat ;
 	background-size: cover;
 	width:100%;
 	min-height: 560px;
@@ -404,8 +404,10 @@ height: 35px;
     min-height: 66em;
 }
 .content {
+    /*
     position: absolute;
     top: -62px;
+    */
     background-color: #fff;
     padding: 2em;
 }
