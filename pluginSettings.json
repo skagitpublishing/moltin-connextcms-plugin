@@ -1,10 +1,10 @@
 {
 
   "pluginDirName": "moltin-connextcms-plugin",
-
-  "backboneTemplates": [],
-  "backboneViews": [],
-  "backboneModels": []
+  
+  "backboneTemplates": ["connextcms/templates/moltinTemplate1.html"],
+  "backboneViews": ["connextcms/views/moltinView1.js"],
+  "backboneModels": ["connextcms/models/moltinBackboneModel.js"]
 
 }
 

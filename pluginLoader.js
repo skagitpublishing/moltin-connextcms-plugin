@@ -20,7 +20,7 @@ var exampleCollection = pluginData.backboneModels[1];
 var exampleView = pluginData.backboneViews[0];
 
 
-/*
+
 // ---BEGIN BACKBONE VIEWS---
 
 //Load the individual views for this plugin.
@@ -44,6 +44,7 @@ $.getScript(pluginDir+exampleView, function(data, textStatus, jqxhr) {
 })
 .fail(function( jqxhr, settings, exception ) {
   debugger;
+  console.error(exception);
 });
 
 // ---END BACKBONE VIEWS---
@@ -54,35 +55,36 @@ $.getScript(pluginDir+exampleView, function(data, textStatus, jqxhr) {
 function loadModels() {
   $.getScript(pluginDir+exampleModel, function(data, textStatus, jqxhr) {
     global.exampleModel = new ExampleModel();
+    //global.moltinModel = new MoltinModel();
 
     //The Collection *depends* on the Model, so loading the Collection script within the Model $.get handler.
-    $.getScript(pluginDir+exampleCollection, function(data, textStatus, jqxhr) {
-      global.exampleCollection = new ExampleCollection();
-      global.exampleCollection.fetch();
-    })
-    .fail(function( jqxhr, settings, exception ) {
-      debugger;
-    });
+    //$.getScript(pluginDir+exampleCollection, function(data, textStatus, jqxhr) {
+    //  global.exampleCollection = new ExampleCollection();
+    //  global.exampleCollection.fetch();
+    //})
+    //.fail(function( jqxhr, settings, exception ) {
+    //  debugger;
+    //});
 
   })
   .fail(function( jqxhr, settings, exception ) {
     debugger;
+    console.error(exception);
   });
 }
 
-
 // ---END BACKBONE MODELS---
-*/
+
 
 
 // ---BEGIN LEFT MENU---
 
 var pluginLi = global.leftMenuView.$el.find('#plugin-link');
-//var tmpLi = pluginLi.clone();
+var tmpLi = pluginLi.clone();
 
 //Construct and add a menu item for the first view.
-//var tmpLi = '<li id="example1-link"><a href="#/" onclick="global.pluginView.exampleView1.render()"><i class="fa fa-gear"></i> <span>Plugin Example</span></a></li>';
-//pluginLi.parent().append(tmpLi);
+var tmpLi = '<li id="example1-link"><a href="#/" onclick="global.pluginView.exampleView1.render()"><i class="fa fa-gear"></i> <span>Moltin</span></a></li>';
+pluginLi.parent().append(tmpLi);
 
 
 // ---BEGIN LEFT MENU---
