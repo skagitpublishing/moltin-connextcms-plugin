@@ -13,6 +13,7 @@ module.exports = function(app) {
   // Keystone Views
   app.get('/test', routes.views.test);
   app.get('/product', routes.views.product);
+  app.get('/checkout', routes.views.checkout);
   
   // Plugin API Route
   //app.get('/api/exampleplugin/list', keystone.middleware.api, routes.api.exampleplugin.list);

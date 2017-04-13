@@ -74,7 +74,7 @@ $(document).ready(function() {
 //This function is called after authenticating with the Moltin API.
 //It loads any pre-created cart for the current user, or loads a new cart otherwise.
 function loadCart() {
-  debugger;
+  //debugger;
 
   var cookie = $.cookie();
 
@@ -195,12 +195,20 @@ function renderCartContents() {
       $cartItemContainer.append($lineItemTemplate);
     }
     
+    //Display the cart price total.
+    $('.pricing--no-padding').text('$'+items.totals.post_discount.raw.without_tax);
     
   }, function(error) {
     debugger;
     
   });
   
+}
+
+//This function is called when the user clicks the Checkout button.
+function startCheckout() {
+  debugger;
   
+  window.location.href = '/checkout';
   
 }

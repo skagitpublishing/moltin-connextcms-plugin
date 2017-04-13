@@ -259,7 +259,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           </div>
           <div class="cart-actions-container cart-section type--center">
             <div class="cart-discount-notice cart-info__small">Shipping and discount codes are added at checkout.</div>
-            <input type="button" class="btn btn--cart-checkout" id="checkout" name="checkout" value="Checkout" />
+            <input type="button" class="btn btn--cart-checkout" id="checkout" name="checkout" value="Checkout" onclick="startCheckout()" />
           </div>
         </div>
         <!-- .cart-bottom end -->
@@ -275,8 +275,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     
     <script id="cart-item-template" type="text/template">
 
-        <div class="container-fluid">
-          <div class="row" style="min-height: 60px; border: 1px solid black;">
+        <div class="container-fluid" style="padding: 10px;">
+          <div class="row" style="min-height: 60px;">
             
             <div class="col-xs-3" style="">
               <img src="http://placehold.it/50x50" class="img-responsive center-block item-image" style="padding: 5px;" />
@@ -359,6 +359,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         width: 100%;
         text-align: center;
         cursor: pointer;
+        background: #6aa74c;
       }
       
       .cart {
