@@ -14,7 +14,7 @@ http://bootsnipp.com/snippets/Oe2vO
             <a href="/" class="btn btn-info" style="width: 100%;">Continue Shopping</a>
             <hr/>
             <div class="shopping_cart">
-              <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+              <form class="form-horizontal" role="form" action="" onsubmit="createOrder(event)" method="post" id="payment-form">
                 <div class="panel-group" id="accordion">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -316,8 +316,8 @@ http://bootsnipp.com/snippets/Oe2vO
                         </div>
                       </fieldset>
 
-                      <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Pay
-                          Now
+                      <button type="submit" class="btn btn-success btn-lg" style="width:100%;">
+                        Pay Now
                       </button>
                       <br/>
                       <div style="text-align: left;"><br/>

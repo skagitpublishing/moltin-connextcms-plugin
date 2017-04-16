@@ -16,7 +16,7 @@ $(document).ready(function() {
         clearTimeout(timer);
 
         //Create an Order from the retrieved data.
-        createOrder();
+        renderPage();
       }
     } catch(err) {
       console.error('Problem trying to access moltin.Cart.cartId in checkout.js');
@@ -36,7 +36,7 @@ function showBilling(event) {
 }
 
 //This order is called on document load after the Moltin data for this customer has been retrieved.
-function createOrder() {
+function renderPage() {
   debugger;
   
   //Display the Cart total price on the page.
@@ -62,4 +62,12 @@ function createOrder() {
     
   });
   */
+}
+
+
+//This function is called by the DOM form when the submit button is clicked.
+function createOrder(event) {
+  debugger;
+  
+  event.preventDefault();
 }
