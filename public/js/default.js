@@ -80,9 +80,9 @@ function loadCart() {
 
   var cart;
   //Create a new cart and save it's ID to the cookie, if one has not been created yet.
-  if(cookie.cartId == undefined) {
+  if(cookie.cartMoltinId == undefined) {
 
-    $.cookie('cartId', moltin.Cart.cartId);
+    $.cookie('cartMoltinId', moltin.Cart.cartId);
 
     //Add the checkout URL to the checkout button.
     //$('.btn--cart-checkout').on('click', function() {
@@ -93,8 +93,9 @@ function loadCart() {
   } else {
     //debugger;
     
-    moltin.Cart.cartId = cookie.cartId;
+    moltin.Cart.cartId = cookie.cartMoltinId;
 
+    //Render the shopping cart contents to the DOM.
     renderCartContents();
     
     //Add the checkout URL to the checkout button.

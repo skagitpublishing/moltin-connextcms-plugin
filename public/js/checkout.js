@@ -1,12 +1,13 @@
 var timer; //Handle for Timer object that waits until the Moltin cart data has been retrieved by default.js.
 
+//This function runs after the page finished loading.
 $(document).ready(function() {
   //debugger;
   
   //Disable the checkout button.
   $('.btn--cart-checkout').prop('disabled', true)
   
-  //Create a timer that checks if the Moltin with the users shopping cart has been retrieved.
+  //Create a timer that checks if the Moltin object with the users shopping cart has been retrieved.
   timer = setTimeout(function() {
     
     try {
@@ -36,6 +37,20 @@ function showBilling(event) {
 
 //This order is called on document load after the Moltin data for this customer has been retrieved.
 function createOrder() {
+  debugger;
+  
+  //Display the Cart total price on the page.
+  moltin.Cart.Contents(function(items) {
+    debugger;
+    
+    //Display the cart price total.
+    $('#order-total').text('$'+items.totals.post_discount.raw.without_tax);
+    
+  //An error occured.
+  }, function(error) {
+    debugger;
+    
+  });
   
   /*
   moltin.Cart.Checkout(function(checkout) {
