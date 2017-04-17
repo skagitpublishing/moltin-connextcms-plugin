@@ -239,15 +239,27 @@ http://bootsnipp.com/snippets/Oe2vO
                       <span class='payment-errors'></span>
                       <fieldset>
                         <legend>What method would you like to pay with today?</legend>
+                        <p>Name on Card</p>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label" for="card-holder-name">
-                            Name on Card
+                          <label class="col-sm-3 control-label" for="card-holder-first-name">
+                            First Name
                           </label>
                           <div class="col-sm-9">
-                              <input type="text" class="form-control" stripe-data="name"
-                                     id="name-on-card" placeholder="Card Holder's Name">
+                              <input type="text" class="form-control" stripe-data="first-name"
+                                     id="card-holder-first-name" placeholder="Card Holder's First Name">
                           </div>
                         </div>
+                        
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label" for="card-holder-last-name">
+                            Last Name
+                          </label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" stripe-data="last-name"
+                                     id="card-holder-last-name" placeholder="Card Holder's Name">
+                          </div>
+                        </div>
+                        
                         <div class="form-group">
                           <label class="col-sm-3 control-label" for="card-number">Card
                               Number
@@ -288,7 +300,6 @@ http://bootsnipp.com/snippets/Oe2vO
                                       <div class="col-xs-3">
                                           <select class="form-control" data-stripe="exp-year"
                                                   id="card-exp-year">
-                                              <option value="2016">2016</option>
                                               <option value="2017">2017</option>
                                               <option value="2018">2018</option>
                                               <option value="2019">2019</option>

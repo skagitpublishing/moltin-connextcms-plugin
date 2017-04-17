@@ -14,6 +14,7 @@ module.exports = function(app) {
   app.get('/test', routes.views.test);
   app.get('/product', routes.views.product);
   app.get('/checkout', routes.views.checkout);
+  app.get('/thankyou', routes.views.thankyou);
   
   // Plugin API Route
   //app.get('/api/exampleplugin/list', keystone.middleware.api, routes.api.exampleplugin.list);
