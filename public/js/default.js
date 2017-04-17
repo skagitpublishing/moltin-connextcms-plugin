@@ -10,6 +10,14 @@ var productId;      //The Moltin Product ID
 function openCart() {
   //debugger;
   
+  if(!$('.cart').hasClass('js-active'))
+    $('.cart').toggleClass('js-active');
+}
+
+//This function opens the cart slide-out. It is called when the user clicks the shopping cart icon in the top right corner.
+function toggleCart() {
+  //debugger;
+  
   $('.cart').toggleClass('js-active');
 }
 
@@ -162,13 +170,17 @@ function renderCartContents() {
   //Load the template
   var lineItemEmptyTemplate = $('#cart-item-template').html();
   
-  openCart();
-  
   //Retrieve the contents of the Cart.
   moltin.Cart.Contents(function(items) {
-    //debugger;  
-    //console.log(items);
+    //debugger;
     
+    //Do nothing if there are no items in the cart.
+    if(items.total_items == 0)
+      return;
+  
+    //Open the cart slide-out.
+    openCart();
+  
     //Convert the contents from an object to an array
     var contents = Object.keys(items.contents);
     
@@ -192,6 +204,11 @@ function renderCartContents() {
       $lineItemTemplate.find('.item-price').text('$'+thisItem.price);
       $lineItemTemplate.find('.item-quantity').text('Qty: '+thisItem.quantity);
       
+      //Add click handlers to the item buttons
+      $lineItemTemplate.find('.increase-qty').click([contents[i]], increaseQty);
+      $lineItemTemplate.find('.decrease-qty').click([contents[i]], decreaseQty);
+      $lineItemTemplate.find('.remove-btn').click([contents[i]], removeItem);
+      
       //Add the modified template to the DOM.
       $cartItemContainer.append($lineItemTemplate);
     }
@@ -206,9 +223,116 @@ function renderCartContents() {
   
 }
 
+//This function is called when the user clicks on the up-arrow button to increase a products 
+//quantity in the cart.
+function increaseQty(event) {
+  //debugger;
+  
+  var productGUID = event.data[0];
+  
+  //Retrieve information on the seleted item in the cart.
+  moltin.Cart.Item(productGUID, function(item) {
+    //debugger;
+    
+    //Increase the quantity by 1.
+    var qty = item.quantity;
+    qty++;
+    
+    //Update the quantity of the item in the cart.
+    moltin.Cart.Update(productGUID, {
+        quantity: qty
+    }, function(item) {
+      console.log('Item '+productGUID+' increased in cart');
+      
+      //If we're on the checkout page, reload the page to reflect the changes in the cart.
+      if(window.location.href.indexOf('/checkout') > -1)
+        location.reload();
+      else 
+        //Re-render the cart to display the updated quantity.
+        renderCartContents();
+      
+    }, function(error) {
+      debugger;
+      console.error('Problem increasing quantity of item '+item.name+' (ID: '+item.id+') with identifier '+productGUID+' in default.js/increaseQty()');
+    });
+    
+  }, function(error) {
+    debugger;
+    console.error('Problem retrieving item information in default.js/increaseQty()');
+  });
+}
+
+//This function is called when the user clicks on the down-arrow button to decrease a products 
+//quantity in the cart.
+function decreaseQty(event) {
+  //debugger;
+  
+  var productGUID = event.data[0];
+  
+  //Retrieve information on the seleted item in the cart.
+  moltin.Cart.Item(productGUID, function(item) {
+    //debugger;
+    
+    //Increase the quantity by 1.
+    var qty = item.quantity;
+    
+    //Decrease the quanity if there is more than 1 quantity of this item.
+    if(qty > 1) {
+      qty--;
+    
+      //Update the quantity of the item in the cart.
+      moltin.Cart.Update(productGUID, {
+          quantity: qty
+      }, function(item) {
+        console.log('Item '+productGUID+' decreased in cart');
+
+        //If we're on the checkout page, reload the page to reflect the changes in the cart.
+        if(window.location.href.indexOf('/checkout') > -1)
+          location.reload();
+        else
+          //Re-render the cart to display the updated quantity.
+          renderCartContents();
+        
+      }, function(error) {
+        debugger;
+        console.error('Problem decreasing quantity of item '+item.name+' (ID: '+item.id+') with identifier '+productGUID+' in default.js/decreaseQty()');
+      });
+    } else {
+      //Trigger the removeItem click event.
+      $(event.target).parent().parent().parent().find('.remove-btn').click();
+    }
+    
+    
+  }, function(error) {
+    debugger;
+    console.error('Problem retrieving item information in default.js/decreaseQty()');
+  });
+}
+
+//This function is called when the user clicks the 'Remove' button next to an item in the cart.
+function removeItem(event) {
+  //debugger;
+  
+  var productGUID = event.data[0];
+  
+  moltin.Cart.Remove(productGUID, function() {
+    
+    //If we're on the checkout page, reload the page to reflect the changes in the cart.
+    if(window.location.href.indexOf('/checkout') > -1)
+      location.reload();
+    else
+      //Re-render the cart to show the changes.
+      renderCartContents();
+    
+  }, function(error) {
+    debugger;
+    console.error('Problem removing item from cart in default.js/removeItem()');
+  });
+}
+
 //This function is called when the user clicks the Checkout button.
 function startCheckout() {
-  debugger;
+  //debugger;
   
   window.location.href = '/checkout';
   

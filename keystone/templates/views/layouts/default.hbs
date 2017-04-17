@@ -77,7 +77,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
           <div class="">
             <div class="cartNav box_1">
-              <a href="#" onclick="openCart()">
+              <a href="#" onclick="toggleCart()">
                 <h3> 
                   <div class="total">
                     <!-- <span class="simpleCart_total"></span> -->
@@ -286,14 +286,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <p class="item-title">Title</p>
               <p class="item-quantity">Quantity:</p>
               <div>
-                <button class="btn btn-xs btn-success" type="button"><span class="glyphicon glyphicon-chevron-up"></span></button>
-                <button class="btn btn-xs btn-success" type="button"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                <button class="btn btn-xs btn-success increase-qty" type="button"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                <button class="btn btn-xs btn-success decrease-qty" type="button"><span class="glyphicon glyphicon-chevron-down"></span></button>
               </div>
             </div>
             
             <div class="col-xs-3" style="">
               <p class="item-price">Price</p>
-              <button class="btn btn-xs btn-danger" type="button">Remove</button>
+              <button class="btn btn-xs btn-danger remove-btn" type="button">Remove</button>
             </div>
             
           </div>
@@ -608,9 +608,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     
     <!-- Hide the preloader after the page has loaded -->
     <script type="text/javascript">
-      //Hide the preloader after everything finished loading and document is ready.
+
+      //Switch control of the preloader.
+      if(typeof(turnOffLoader) == "undefined") {
+        //If the variable hasn't already been defined, initialize it as true.
+        var turnOffLoader = true;
+      //If it has been defined, then a page is trying to override the default behavior.
+      } else {
+        
+      }
+      
       $(document).ready(function() {
-        $('#loader-wrapper').hide();
+        
+        var preLoaderTimer = setInterval(function() {
+          
+          if(turnOffLoader) {
+            $('#loader-wrapper').hide();   //Remove the pre-loader
+            clearInterval(preLoaderTimer); //Turn off the timer.
+          }
+            
+        }, 500);
+        
       });
     </script>
     

@@ -7,6 +7,9 @@
 var targetProduct;  //Product for this page.
 var relatedProducts;//Related products in the store, for displaying the bottom of the page.
 
+//Override default pre-loader settings and keep preloader up.
+var turnOffLoader = false;  
+
 $(document).ready(function() {
     
   
@@ -86,6 +89,8 @@ function getRelatedProducts() {
       thisElem.find('.product-at').find('a').attr('href', '/product?productId='+relatedProducts[i].id);
     }
     
+    //Turn off the pre-loader image after replacing all images.
+    turnOffLoader = true;
 
   }, function(error) {
     console.log('Error in loadProduct.js/getProductData(): Could not communicate with the Moltin server!');
@@ -127,12 +132,12 @@ function getRandomProducts(targProd, allProds) {
 //This function is called when the user clicks the Add to Cart button.
 //It adds the product associates with the current page to the cart.
 function addToCart() {
-  debugger;
+  //debugger;
   
   openCart();
   
   moltin.Cart.Insert(targetProduct.id, '1', null, function(cart) {
-    debugger;
+    //debugger;
     
     console.log('product '+targetProduct.id+' added to cart.');
     
@@ -140,6 +145,6 @@ function addToCart() {
     
   }, function(error) {
     debugger;
-    
+    console.error('Error trying to add item '+targetProduct.id+' to cart in loadProduct.js/addToCart()');
   });
 }
