@@ -86,6 +86,11 @@ var ExampleModel = Backbone.Model.extend({
     $.get('/api/moltinplugin/list', '', function(data) {
       debugger;
       
+      if(data.collection[0] == undefined) {
+        console.error('Could not retrieve Moltin API info from the model. Error in moltin-connextcms-plugin/connextcms/models/moltinBckboneModel.js');
+        return;
+      }
+      
       thisModel.id = data.collection[0]._id;
       thisModel.set('publicId', data.collection[0].publicId);
       thisModel.set('_id', data.collection[0]._id);
