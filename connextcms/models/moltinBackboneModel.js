@@ -87,7 +87,7 @@ var ExampleModel = Backbone.Model.extend({
       debugger;
       
       if(data.collection[0] == undefined) {
-        console.error('Could not retrieve Moltin API info from the model. Error in moltin-connextcms-plugin/connextcms/models/moltinBckboneModel.js');
+        console.error('Could not retrieve Moltin API info from the model. Did you set the API key in Moltin model in the Keystone Admin UI? Error in moltin-connextcms-plugin/connextcms/models/moltinBckboneModel.js');
         return;
       }
       

@@ -14,6 +14,16 @@ This plugin attempts to interface ConnextCMs with the Moltin ecommerce API.
     * If the product ID is blank or invalid, then an error message is displayed.
     * Otherwise the product information corresponding to that product ID is retrieved from the Moltin API and the DOM is populated with content retrieved from Moltin.
 
+## Installation
+This repository is based on the ConnextCMS Plugin Template. Investigate that repository for background on proper installation.
+Below are the extra installation steps specific to this repository:
+
+1. Clone this respository onto a system with a working version of ConnextCMS, and run the merge script
+just like the ConnextCMS Plugin Template.
+
+2. Access the Keystone Admin UI and find the newly created Moltin model. Create a new model and add your Moltin API
+key to it. Save the model.
+
 
 ## Attribution
 This eCommerce plugin/demo makes use of the following open source repositories:
