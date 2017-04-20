@@ -24,6 +24,9 @@ just like the ConnextCMS Plugin Template.
 2. Access the Keystone Admin UI and find the newly created Moltin model. Create a new model and add your Moltin API
 key to it. Save the model.
 
+3. Use Moltin's Forge dashboard to locate the product ID number of your products. For each product, create a page
+in ConnextCMS and set its Redirect to something like this: `/product?productId=<your product Id>`
+
 
 ## Attribution
 This eCommerce plugin/demo makes use of the following open source repositories:

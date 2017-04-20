@@ -57,14 +57,14 @@ function renderPage() {
 
 //This function is called by the DOM form when the submit button is clicked.
 function createOrder(event) {
-  debugger;
+  //debugger;
   
   event.preventDefault();
   
   //Prepare to checkout be retrieving all information about the Cart.
   //https://docs.moltin.com/endpoints/checkout#retrieve-the-available-checkout-options
   moltin.Cart.Checkout(function(checkout) {
-    debugger;
+    //debugger;
     //console.log(checkout);
     
     //Collect the user information from the form
@@ -120,18 +120,18 @@ function createOrder(event) {
       ship_to: 'bill_to',
       
     }, function(order) {
-      debugger;
+      //debugger;
 
       //Process payment
       //https://docs.moltin.com/endpoints/checkout#process-payment
       moltin.Checkout.Payment('purchase', order.id, {
         data: CCData
       }, function(payment) {
-        debugger;
+        //debugger;
 
         //Delete the cart so that the contents no longer show up in the DOM
         moltin.Cart.Delete(function() {
-          debugger;
+          //debugger;
           
           //On success, send the user to the thank you page.
           window.location.href = "/thankyou";
