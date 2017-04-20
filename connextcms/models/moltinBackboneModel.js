@@ -84,7 +84,7 @@ var ExampleModel = Backbone.Model.extend({
     var thisModel = this;
     
     $.get('/api/moltinplugin/list', '', function(data) {
-      //debugger;
+      debugger;
       
       thisModel.id = data.collection[0]._id;
       thisModel.set('publicId', data.collection[0].publicId);

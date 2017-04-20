@@ -13,3 +13,13 @@ This plugin attempts to interface ConnextCMs with the Moltin ecommerce API.
   * JavaScript in the /product template retrieves the product ID from the URL. 
     * If the product ID is blank or invalid, then an error message is displayed.
     * Otherwise the product information corresponding to that product ID is retrieved from the Moltin API and the DOM is populated with content retrieved from Moltin.
+
+
+## Attribution
+This eCommerce plugin/demo makes use of the following open source repositories:
+* KeystoneJS
+* ConnextCMS
+* ConnextCMS Plugin Template
+* [Boostrap](http://getbootstrap.com)
+* [Bootstrap template by W3 Layouts](https://p.w3layouts.com/demos/mattress/web/index.html)
+* [Awesome Checkout snippet](http://bootsnipp.com/snippets/Oe2vO)
