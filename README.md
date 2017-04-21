@@ -8,7 +8,7 @@ eCommerce website.
 ## Demo
 Try out the demo site at [ecommerce.connextcms.com](http://ecommerce.connextcms.com). Log into the back 
 end with the default username/password of
-**user@keystonejs.com/admin**. The server restores iteself from a backup every 24 hours, so don't
+`user@keystonejs.com/admin`. The server restores iteself from a backup every 24 hours, so don't
 worry about messing it up. Go nuts!
 
 
