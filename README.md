@@ -1,6 +1,15 @@
 # moltin-connextcms-plugin
 
-This plugin attempts to interface ConnextCMs with the Moltin ecommerce API.
+This plugin interfaces [ConnextCMS](http://connextcms.com) and [KeystoneJS](http://keystonejs.com) 
+with the [Moltin eCommerce API service](https://www.moltin.com/) to create a Full Stack, JavaScript-native
+eCommerce website.
+
+
+## Demo
+Try out the demo site at [ecommerce.connextcms.com](ecommerce.connextcms.com). Log into the back end with default user/pass of
+**user@keystonejs.com/admin**. The server restored iteself from a backup every 24 hours, so don't
+worry about messing it up.
+
 
 ## Moltin/eCommerce Interface Specification
 
@@ -28,11 +37,23 @@ key to it. Save the model.
 in ConnextCMS and set its Redirect to something like this: `/product?productId=<your product Id>`
 
 
+## License
+(The MIT License)
+
+Copyright (c) 2016 [Skagit Connext](http://skagitconnext.com/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
 ## Attribution
 This eCommerce plugin/demo makes use of the following open source repositories:
-* KeystoneJS
-* ConnextCMS
-* ConnextCMS Plugin Template
+* [ConnextCMS](https://github.com/skagitpublishing/ConnextCMS)
+* [ConnextCMS Plugin Template](https://github.com/skagitpublishing/plugin-template-connextcms)
+* [KeystoneJS](https://github.com/keystonejs/keystone)
 * [Boostrap](http://getbootstrap.com)
 * [Bootstrap template by W3 Layouts](https://p.w3layouts.com/demos/mattress/web/index.html)
 * [Awesome Checkout snippet](http://bootsnipp.com/snippets/Oe2vO)
