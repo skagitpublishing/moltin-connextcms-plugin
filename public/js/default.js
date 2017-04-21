@@ -40,6 +40,11 @@ $(document).ready(function() {
   $.get('/api/moltinplugin/list', '', function(data) {
     //debugger;
 
+    if(data.collection[0] == undefined) {
+        console.error('Could not retrieve Moltin API info from the model. Did you set the API key in Moltin model in the Keystone Admin UI? Error in /public/js/default.js');
+        return;
+      }
+    
     //Retrieve the publicID needed to access the Moltin API.
     publicId = data.collection[0].publicId;
 
@@ -299,7 +304,7 @@ function decreaseQty(event) {
       });
     } else {
       //Trigger the removeItem click event.
-      $(event.target).parent().parent().parent().find('.remove-btn').click();
+      $(event.target).parent().parent().parent().parent().find('.remove-btn').click();
     }
     
     
