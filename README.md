@@ -18,11 +18,18 @@ A snapshot has been created that you can clone and spin up in a few minutes with
 dependencies installed. To get your own copy, visit [ConnextCMS.com](http://connextcms.com) and 
 [fill out this form](http://connextcms.com/page/clone-your-own). 
 
+Even if Digital Ocean is not your perfered devlopment/hosting environment, having a working code
+with properly compiled code is a great place to start. Feel free to copy the code from the clone
+to your own environment.
+
 
 ## Documentation and Support
 The easiest way to get up to speed on installing and using ConnextCMS is to watch the series of 
-[instructional videos](http://connextcms.com/page/videos) that have been created. It is also strongly 
+[instructional videos](http://connextcms.com/page/videos) that have been created. 
+The most up-to-date documentation lives on the projects [GitHub Wiki page](https://github.com/skagitpublishing/ConnextCMS/wiki).
+It is also strongly 
 recommended that you familiarize yourself with the [KeystoneJS documentation](http://keystonejs.com/docs/). 
+
 ConnextCMS is built using the Backbone.js and Require.js frameworks. 
 [Developing Backbone.js Applications](https://addyosmani.com/backbone-fundamentals/) is a well 
 written, free, open source book for learning about how to use these two frameworks.
@@ -32,11 +39,12 @@ If you're developing a site and need professional help, [Skagit Connext](http://
 
 
 ## Installation
-This repository is based on the ConnextCMS Plugin Template. Investigate that repository for background on proper installation.
+This repository is based on the [ConnextCMS Plugin Template](https://github.com/skagitpublishing/plugin-template-connextcms). 
+Investigate that repository for background on proper installation.
 Below are the extra installation steps specific to this repository:
 
 1. Clone this respository onto a system with a working version of ConnextCMS, and run the merge script
-just like the ConnextCMS Plugin Template.
+just like you would with the [ConnextCMS Plugin Template](https://github.com/skagitpublishing/plugin-template-connextcms).
 
 2. Access the Keystone Admin UI and find the newly created Moltin model. Create a new model and add your Moltin API
 key to it. Save the model.
