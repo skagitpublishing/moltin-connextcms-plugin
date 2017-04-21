@@ -6,22 +6,30 @@ eCommerce website.
 
 
 ## Demo
-Try out the demo site at [ecommerce.connextcms.com](ecommerce.connextcms.com). Log into the back end with default user/pass of
-**user@keystonejs.com/admin**. The server restored iteself from a backup every 24 hours, so don't
-worry about messing it up.
+Try out the demo site at [ecommerce.connextcms.com](http://ecommerce.connextcms.com). Log into the back 
+end with the default username/password of
+**user@keystonejs.com/admin**. The server restores iteself from a backup every 24 hours, so don't
+worry about messing it up. Go nuts!
 
 
-## Moltin/eCommerce Interface Specification
+### Clone the Demo
+ConnextCMS is designed to run on a [Digital Ocean Droplet](https://m.do.co/c/8f47a23b91ce) VPS. 
+A snapshot has been created that you can clone and spin up in a few minutes with all software and 
+dependencies installed. To get your own copy, visit [ConnextCMS.com](http://connextcms.com) and 
+[fill out this form](http://connextcms.com/page/clone-your-own). 
 
-* Moltin API key needs to be added to the Site Settings area.
 
-* Product categories retrieved from Moltin are used to generate the navigation menu.
+## Documentation and Support
+The easiest way to get up to speed on installing and using ConnextCMS is to watch the series of 
+[instructional videos](http://connextcms.com/page/videos) that have been created. It is also strongly 
+recommended that you familiarize yourself with the [KeystoneJS documentation](http://keystonejs.com/docs/). 
+ConnextCMS is built using the Backbone.js and Require.js frameworks. 
+[Developing Backbone.js Applications](https://addyosmani.com/backbone-fundamentals/) is a well 
+written, free, open source book for learning about how to use these two frameworks.
 
-* Product pages use a Keystone template view to autogenerate content based on data pulled from the Moltin API.
-  * View displays at path /product with an extension like: '?productId=12345' 
-  * JavaScript in the /product template retrieves the product ID from the URL. 
-    * If the product ID is blank or invalid, then an error message is displayed.
-    * Otherwise the product information corresponding to that product ID is retrieved from the Moltin API and the DOM is populated with content retrieved from Moltin.
+If you get stuck and need help, you can reach out the [community support mailing list](https://groups.google.com/forum/#!forum/connextcms). 
+If you're developing a site and need professional help, [Skagit Connext](http://skagitconnext.com/) is available to help you.
+
 
 ## Installation
 This repository is based on the ConnextCMS Plugin Template. Investigate that repository for background on proper installation.
@@ -35,6 +43,22 @@ key to it. Save the model.
 
 3. Use Moltin's Forge dashboard to locate the product ID number of your products. For each product, create a page
 in ConnextCMS and set its Redirect to something like this: `/product?productId=<your product Id>`
+
+
+## Moltin/eCommerce Interface Specification
+
+* Moltin API key is loaded into a KeystoneJS model. This key is retrieved by the front end when needed.
+
+* The navigation menu is generated form the standard ConnextCMS Section/Page scheme. Each page references
+a product and passes in the information with a redirect, including the product ID. 
+Product information is retrieved from the Moltin API are used to populate the product page.
+
+* Product pages use a Keystone template view to autogenerate content based on data pulled from the Moltin API.
+  * View displays at path /product with an extension like: '?productId=12345' 
+  * JavaScript in the /product template retrieves the product ID from the URL. 
+    * If the product ID is blank or invalid, then an error message is displayed.
+    * Otherwise the product information corresponding to that product ID is retrieved from the Moltin API and 
+    the DOM is populated with content retrieved from Moltin.
 
 
 ## License
