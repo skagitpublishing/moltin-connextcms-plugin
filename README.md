@@ -19,7 +19,8 @@ dependencies installed. To get your own copy, visit [ConnextCMS.com](http://conn
 [fill out this form](http://connextcms.com/page/clone-your-own). 
 
 A 'vanilla' copy of ConnextCMS runs on port 80. A copy of the eCommerce demo runs on port 3002.
-Both applications are managed with [pm2](http://pm2.keymetrics.io/).
+Both applications are managed with [pm2](http://pm2.keymetrics.io/). The Linux login/password
+for the clone is `demouser/demouserpassword`.
 
 Even if Digital Ocean is not your perfered devlopment/hosting environment, having a working code
 with properly compiled code is a great place to start. Feel free to copy the code from the clone
