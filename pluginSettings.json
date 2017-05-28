@@ -5,7 +5,7 @@
   "backboneTemplateFiles": ["connextcms/templates/moltinTemplate1.html"],
   "backboneViewFiles": ["connextcms/views/moltinView1.js"],
   "backboneModelFiles": ["connextcms/models/moltinBackboneModel.js"],
-  "backboneCollectionFiles": ["connextcms/models/moltinBackboneCollection.js"],
+  "backboneCollectionFiles": [""],
   
   "backboneViewNames": ["ExampleView1"],
   "backboneModelNames": ["ExampleModel"],

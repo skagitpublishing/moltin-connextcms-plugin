@@ -6,7 +6,7 @@
 //Copy the JSON data for this plugin into local variable pluginData.
 for(var i=0; i < global.pluginView.pluginData.length; i++) {
   var pluginData = global.pluginView.pluginData[i];
-  if(pluginData.pluginDirName == 'plugin-template-connextcms') {
+  if(pluginData.pluginDirName == 'moltin-connextcms-plugin') {
     break;
   }
 }
