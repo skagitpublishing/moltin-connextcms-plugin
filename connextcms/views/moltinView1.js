@@ -68,7 +68,7 @@ var ExampleView1 = Backbone.View.extend({
     this.updateLeftMenuView();
     
     //Assign the model to the view.
-    this.model = global.exampleModel;
+    this.model = this.pluginHandle.models[0];
     
     this.$el.find('#inputApiKey').val(this.model.get('publicId'));
     
