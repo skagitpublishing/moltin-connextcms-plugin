@@ -11,7 +11,7 @@ var ExampleModel = Backbone.Model.extend({
 
   //Initialize is called upon the instantiation of this model. This function is executed once
   //per model retrieved from the server.
-  initialize: function() {
+  initialize: function(attributes, options) {
     //This function is often used for debugging, so leave it here.
     //this.on('change', function() {
       //debugger;        
@@ -19,6 +19,12 @@ var ExampleModel = Backbone.Model.extend({
     //});
     //debugger;
 
+    //Load the plugin metdata as a local variables.
+    this.pluginData = options.pluginData;
+    
+    //Load a handle to the plugin constructs as a local variable.
+    this.pluginHandle = options.pluginHandle;
+    
     this.url = '/api/moltinplugin/'+this.id+'/update';
     
     this.fetch(); //Get the model data from the server.

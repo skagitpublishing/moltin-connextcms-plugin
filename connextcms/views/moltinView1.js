@@ -31,7 +31,11 @@ var ExampleView1 = Backbone.View.extend({
   initialize: function () {
     //debugger;
     
+    //Load the plugin metdata as a local variables.
     this.pluginData = this.options.pluginData;
+    
+    //Load a handle to the plugin constructs as a local variable.
+    this.pluginHandle = this.options.pluginHandle;
     
     var thisView = this; //Maitain scope inside the AJAX handler.
     
