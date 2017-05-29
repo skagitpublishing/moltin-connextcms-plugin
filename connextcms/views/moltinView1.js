@@ -1,4 +1,4 @@
-debugger;
+//debugger;
 
 
 //Get a local copy of the JSON settings for this plugin.
@@ -29,7 +29,7 @@ var ExampleView1 = Backbone.View.extend({
   },
 
   initialize: function () {
-    debugger;
+    //debugger;
     
     //Load the plugin metdata as a local variables.
     this.pluginData = this.options.pluginData;
