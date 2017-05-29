@@ -1,4 +1,4 @@
-//debugger;
+debugger;
 
 
 //Get a local copy of the JSON settings for this plugin.
