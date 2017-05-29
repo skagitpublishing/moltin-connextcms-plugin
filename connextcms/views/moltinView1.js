@@ -13,7 +13,7 @@ for(var i=0; i < global.pluginView.pluginData.length; i++) {
 
 //'use strict'; //Causes error trying to import ExampleView1 object into ConnextCMS.
 
-var ExampleTemplate1 = '/'+pluginData.backboneTemplates[0];
+var ExampleTemplate1 = '/'+pluginData.backboneTemplateFiles[0];
 
 var ExampleView1 = Backbone.View.extend({
 
