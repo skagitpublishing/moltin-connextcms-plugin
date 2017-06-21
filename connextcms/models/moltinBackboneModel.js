@@ -1,7 +1,7 @@
 
 
 
-var ExampleModel = Backbone.Model.extend({
+var MoltinModel = Backbone.Model.extend({
 
   idAttribute: "_id",  //Map the Model 'id' to the '_id' assigned by the server.
 
