@@ -7,12 +7,12 @@
   "backboneModelFiles": ["connextcms/models/moltinBackboneModel.js"],
   "backboneCollectionFiles": [""],
   
-  "backboneViewNames": ["ExampleView1"],
-  "backboneModelNames": ["ExampleModel"],
-  "backboneCollectionNames": ["ExampleCollection"],
+  "backboneViewNames": ["MoltinView1"],
+  "backboneModelNames": ["MoltinModel"],
+  "backboneCollectionNames": ["MoltinCollection"],
   
-  "primaryViewInstance": "exampleView1",
-  "primaryViewConstructor": "ExampleView1",
+  "primaryViewInstance": "moltinView1",
+  "primaryViewConstructor": "MoltinView1",
   "primaryViewId": "moltin-link",
   "primaryViewLabel": "Moltin API",
   "primaryViewFAIcon": "fa-shopping-cart"
