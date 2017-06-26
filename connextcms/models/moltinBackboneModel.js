@@ -52,9 +52,17 @@ var MoltinModel = Backbone.Model.extend({
 
         //If the refreshView flag is set, then refresh the Collection and then refresh the View.
         if(thisModel.refreshView) {
-          thisModel.refreshView = false;
-          global.exampleCollection.refreshView = true;
-          global.exampleCollection.fetch();
+          
+					var thisPlugin = global.pluginView.getHandle('moltin-connextcms-plugin');
+					if(!thisPlugin) {
+						console.error('Could not find plugin that matches: '+'moltin-connextcms-plugin');
+						return;
+					}
+					
+					thisModel.refreshView = false;
+					thisPlugin.collections[0].refreshView = true;
+					thisPlugin.collections[0].fetch();
+
         }
 
         log.push('moltinBackboneModel.js/save() executed.');
