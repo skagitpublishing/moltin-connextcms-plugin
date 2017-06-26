@@ -19,7 +19,7 @@ cp keystone/templates/views/layouts/*.hbs ../myCMS/templates/views/layouts/
 
 #customized keystone.js file
 cp keystone/eCommerceDemo.js ../myCMS/
-rm ../myCMS/keystone.js
+#rm ../myCMS/keystone.js
 
 echo Copying public files
 cp public/js/*.js ../myCMS/public/js/
