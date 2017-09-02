@@ -2,30 +2,30 @@
 echo Preparing to copy into myCMS directory...
 
 echo Copying plugin files into /public/plugins directory
-mkdir ../myCMS/public/plugins
-cp -rf ../moltin-connextcms-plugin ../myCMS/public/plugins/
+mkdir ~/myCMS/public/plugins
+cp -rf ~/plugins/moltin-connextcms-plugin ~/myCMS/public/plugins/
 
 echo Copying Keystone Models
-cp keystone/models/*.js ../myCMS/models/
+cp keystone/models/*.js ~/myCMS/models/
 
 echo Copying Keystone API Routes
-cp keystone/routes/exampleRouter.js ../myCMS/routes/
-cp keystone/routes/api/*.js ../myCMS/routes/api/
-cp keystone/routes/views/*.js ../myCMS/routes/views/
+cp keystone/routes/exampleRouter.js ~/myCMS/routes/
+cp keystone/routes/api/*.js ~/myCMS/routes/api/
+cp keystone/routes/views/*.js ~/myCMS/routes/views/
 
 echo Copying Keystone Views
-cp keystone/templates/views/*.hbs ../myCMS/templates/views/
-cp keystone/templates/views/layouts/*.hbs ../myCMS/templates/views/layouts/
+cp keystone/templates/views/*.hbs ~/myCMS/templates/views/
+cp keystone/templates/views/layouts/*.hbs ~/myCMS/templates/views/layouts/
 
 #customized keystone.js file
-cp keystone/eCommerceDemo.js ../myCMS/
-#rm ../myCMS/keystone.js
-
-echo Copying public files
-cp public/js/*.js ../myCMS/public/js/
-cp public/images/*.* ../myCMS/public/images/
-cp public/styles/*.css ../myCMS/public/styles/
-cp public/*.html ../myCMS/public/
+cp keystone/eCommerceDemo.js ~/myCMS/keystone.js
 
 #copying test settings
-cp ../publicsettings.json ../myCMS/public/js/
+cp publicsettings.json ~/myCMS/public/js/
+cp privatesettings.json ~/myCMS/private/
+
+#THIS SHOULD BE LAST CODE BLOCK EXECUTED
+echo Copying public directory
+cp -rP public ~/myCMS/
+#For docker/nginx config, copy the public file to a directory accessibly by the host system
+cp -rP ~/myCMS/public ~/
