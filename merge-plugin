@@ -21,8 +21,8 @@ cp keystone/templates/views/layouts/*.hbs ~/myCMS/templates/views/layouts/
 cp keystone/eCommerceDemo.js ~/myCMS/keystone.js
 
 #copying test settings
-cp publicsettings.json ~/myCMS/public/js/
-cp privatesettings.json ~/myCMS/private/
+cp ../publicsettings.json ~/myCMS/public/js/
+cp ../privatesettings.json ~/myCMS/private/
 
 #THIS SHOULD BE LAST CODE BLOCK EXECUTED
 echo Copying public directory
