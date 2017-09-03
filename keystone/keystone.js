@@ -22,7 +22,7 @@ keystone.init({
   'favicon': 'public/favicon.ico',
   'views': 'templates/views',
   'view engine': 'hbs',
-  'port': 3002,
+  'port': 3001,
 
   'custom engine': handlebars.create({
           layoutsDir: 'templates/views/layouts',
@@ -36,6 +36,8 @@ keystone.init({
   'session': true,
   'auth': true,
   'user model': 'User',
+  'file limit': '50MB',
+  'mongo': 'mongodb://172.17.0.1:3501/ecommerce'
 });
 
 // Load your project's Models
